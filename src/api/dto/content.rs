@@ -109,6 +109,12 @@ pub enum TypedMessage {
         #[serde(skip_serializing_if = "Option::is_none")]
         mentions: Option<Vec<Mention>>,
     },
+    #[serde(rename = "event")]
+    Event {
+        text: String,
+        #[serde(skip_serializing_if = "Option::is_none")]
+        mentions: Option<Vec<Mention>>,
+    },
     #[serde(rename = "contact")]
     Contact {
         contact: Option<SsbId>,
