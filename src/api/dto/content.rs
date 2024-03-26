@@ -111,7 +111,10 @@ pub enum TypedMessage {
     },
     #[serde(rename = "event")]
     Event {
-        text: String,
+        event: String,
+        section: String,
+        content : String,
+
         #[serde(skip_serializing_if = "Option::is_none")]
         mentions: Option<Vec<Mention>>,
     },
